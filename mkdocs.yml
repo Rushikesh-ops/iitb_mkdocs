@@ -1,0 +1,48 @@
+site_name: IITB
+theme:
+  name: material
+  features:
+    - content.code.copy
+  logo: img/cdac-logo.png
+extra:
+  generator: false
+
+
+# site_name: My Documentation
+# site_url: https://example.com/
+# nav:
+#   - Home: index.md
+#   - Docs:
+#     - Page 1: page1.md
+#     - Page 2: page2.md
+#     - Page 3: page3.md
+#     - ...
+#     - Page 20: page20.md
+#   - Installed Applications:
+#     - Domains:
+#       - Molecular Dynamics: Installed Applications/Domains/MolecularDynamics.md
+#       - Computational Fluid Dynamics: Installed Applications/Domains/CFD.md
+#       - ...
+#     - Benchmarks:
+#       - HPL: Installed Applications/Benchmarks/HPL.md
+#       - HPCG: Installed Applications/Benchmarks/HPCG.md
+#       - ...
+#   - Page 2-SAAC: Page2-SAAC.md
+#   - Page 3-FTF: Page3-FTF.md
+#   - Page 4-HAC: Page4-HAC.md
+#   - Page 5-TF-HPC: Page5-TF-HPC.md
+#   - Page 6-ResourceM: Page6-ResourceM.md
+#   - Page 7-LoadingM: Page7-LoadingM.md
+#   - Page 8-PreparingE: Page8-PreparingE.md
+#   - Page 9-Debugging: Page9-Debugging.md
+#   - Page 91-ML-DL: Page91-ML-DL.md
+#   - Page 92-ImportantFacts: Page92-ImportantFacts.md
+#   - Page 93-BestPractices: Page93-BestPractices.md
+#   - Page 94-InstalledAppl: Page94-InstalledAppl.md
+#   - Page 95-Acknowledging: Page95-Acknowledging.md
+#   - Page 96-Help: Page96-Help.md
+#   - Page 97-UserCreation: Page97-UserCreation.md
+#   - Page 98-ClosingAccount: Page98-ClosingAccount.md
+#   - Page 99-References: Page99-References.md
+# theme:
+#   name: material
