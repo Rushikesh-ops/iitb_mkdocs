@@ -1,0 +1,1355 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../../Page99-References/">
+      
+      
+        <link rel="next" href="../MolecularDynamics/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>CFD - IITB</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#computational-fluid-dynamics" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="IITB" class="md-header__button md-logo" aria-label="IITB" data-md-component="logo">
+      
+  <img src="../../../img/cdac-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IITB
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              CFD
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="IITB" class="md-nav__button md-logo" aria-label="IITB" data-md-component="logo">
+      
+  <img src="../../../img/cdac-logo.png" alt="logo">
+
+    </a>
+    IITB
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Page2-SAAC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Architecture and Configuration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Page3-FTF/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    First Things First
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Page4-HAC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to access the cluster
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Page5-TF-HPC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Transferring files between local machine and HPC cluster
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Page6-ResourceM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Resource Management
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Page7-LoadingM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Loading packages through SPACK
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Page8-PreparingE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Preparing Your Own Executable
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Page9-Debugging/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Debugging Your Codes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Page91-ML-DL/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Machine Learning (ML) / Deep Learning (DL) Application Development
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Page911-Enroot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enroot for HPC and Deep Learning Applications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Page92-ImportantFacts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Some Important Facts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Page93-BestPractices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Best Practices for HPC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Page94-InstalledAppl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installed Applications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Page95-Acknowledging/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Acknowledging the National Supercomputing Mission in Publications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Page96-Help/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Help – PARAM Rudra Support
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Page97-UserCreation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Creation Process
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Page98-ClosingAccount/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Closing Your Account on PARAM Rudra
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Page99-References/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_20" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_20" id="__nav_20_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Installed Applications
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_20_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_20">
+            <span class="md-nav__icon md-icon"></span>
+            Installed Applications
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_20_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_20_1" id="__nav_20_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Domains
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_20_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_20_1">
+            <span class="md-nav__icon md-icon"></span>
+            Domains
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    CFD
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    CFD
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#computational-fluid-dynamics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Computational Fluid Dynamics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Computational Fluid Dynamics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#openfoam" class="md-nav__link">
+    <span class="md-ellipsis">
+      OpenFOAM
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="OpenFOAM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slurm-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slurm Script
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anuga" class="md-nav__link">
+    <span class="md-ellipsis">
+      ANUGA
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ANUGA">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slurm-script_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slurm Script
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wrf" class="md-nav__link">
+    <span class="md-ellipsis">
+      WRF
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="WRF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slurm-script_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slurm Script
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amber24" class="md-nav__link">
+    <span class="md-ellipsis">
+      AMBER24
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AMBER24">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slurm-script_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slurm Script
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MolecularDynamics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MolecularDynamics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page94-InstalledAppl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installed Applications/Libraries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Weather/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Weather
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#computational-fluid-dynamics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Computational Fluid Dynamics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Computational Fluid Dynamics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#openfoam" class="md-nav__link">
+    <span class="md-ellipsis">
+      OpenFOAM
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="OpenFOAM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slurm-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slurm Script
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anuga" class="md-nav__link">
+    <span class="md-ellipsis">
+      ANUGA
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ANUGA">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slurm-script_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slurm Script
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wrf" class="md-nav__link">
+    <span class="md-ellipsis">
+      WRF
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="WRF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slurm-script_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slurm Script
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amber24" class="md-nav__link">
+    <span class="md-ellipsis">
+      AMBER24
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AMBER24">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slurm-script_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slurm Script
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>CFD</h1>
+
+<h3 id="computational-fluid-dynamics"><a href="http://127.0.0.1:8000/Installed%20Applications/Domains/Page94-InstalledAppl/">Computational Fluid Dynamics</a></h3>
+<h4 id="openfoam">OpenFOAM</h4>
+<h5 id="introduction">Introduction</h5>
+<p>OpenFOAM is a GPL-opensource C++ CFD-toolbox. This offering is supported</p>
+<p>by OpenCFD Ltd, producer and distributor of the OpenFOAM software via</p>
+<p><a href="www.openfoam.com">www.openfoam.com</a>, and owner of the OPENFOAM trademark. OpenCFD Ltd has</p>
+<p>been developing and releasing OpenFOAM since its debut in 2004.</p>
+<p>The official website for OpenFOAM:  <a href="https://www.openfoam.com/">https://www.openfoam.com/</a></p>
+<h5 id="input">Input</h5>
+<p>The following example illustrates the running of NWChem with the commonly used data set.</p>
+<p>Input Data Set link:<a href="http://openfoamwiki.net/images/6/62/Motorbike_bench_template.tar.gz"> http://openfoamwiki.net/images/6/62/Motorbike_bench_template.tar.gz</a></p>
+<p><code>Wget http://openfoamwiki.net/images/6/62/Motorbike_bench_template.tar.gz</code></p>
+<h5 id="slurm-script">Slurm Script</h5>
+<pre><code>#!/bin/bash
+#SBATCH --job-name=&quot;rfm_job&quot;
+#SBATCH --ntasks=96
+#SBATCH --ntasks-per-node=48
+#SBATCH --output=rfm_job.out
+#SBATCH --error=rfm_job.err
+#SBATCH --exclusive
+#SBATCH --partition=cpu
+spack load openfoam/ggn7wsm
+spack load intel-oneapi-mpi/3alw73q
+export OMP_NUM_THREADS=1
+tar --strip-components 2 -xf Motorbike_bench_template.tar.gz bench_template/basecase
+./Allclean
+sed -i -- &quot;s/method .*/method          scotch;/g&quot; system/decomposeParDict
+sed -i -- &quot;s/numberOfSubdomains .*/numberOfSubdomains 96;/g&quot; system/decomposeParDict
+sed -i -- 's/    #include &quot;streamLines&quot;//g' system/controlDict
+sed -i -- 's/    #include &quot;wallBoundedStreamLines&quot;//g' system/controlDict
+sed -i -- 's|caseDicts|caseDicts/mesh/generation|' system/meshQualityDict
+./Allmesh
+time \
+mpirun -np 96 simpleFoam -parallel
+</code></pre>
+<!-- #### SU2
+
+#### CFDEM
+
+#### FDS -->
+
+<h4 id="anuga">ANUGA</h4>
+<h5 id="introduction_1">Introduction</h5>
+<p>The ANUGA Hydrodynamic Model is an open-source software used primarily for simulating the impact of tsunamis, floods, and storm surges in coastal and riverine areas. Developed by the Australian National University (ANU) and Geoscience Australia, ANUGA employs the shallow water wave equations to model the flow of water over complex terrain. The model is widely used for disaster management and planning, allowing detailed simulations of water behavior and predictions in potential flood zones.</p>
+<h5 id="input_1">Input</h5>
+<p>The dataset represents the geographic area of the Mahanadi Delta, India, with actual inputs including tidal data, rainfall data, mesh data, ALOS data, and other necessary inputs. This data uses records from September 12 for simulation purposes. Input files are organized in respective directories in CSV and other compatible formats.</p>
+<h5 id="slurm-script_1">Slurm Script</h5>
+<pre><code>#!/bin/bash                     # Specifies that the script should be executed with the bash shell.
+
+#SBATCH --nodes=4               # Requests 4 compute nodes for the job.
+#SBATCH --ntasks-per-node=46    # Requests 46 tasks per node (assuming a maximum of 48 cores).
+#SBATCH -p standard             # Specifies the partition/queue to be used, such as 'standard' or 'gpu'.
+#SBATCH --time=2-00:00:00       # Sets the maximum job runtime to 2 days.
+##SBATCH --output=mahanadi_delta_.%J.out # Specifies the output file name pattern, using job ID.
+#SBATCH --exclusive             # Requests exclusive access to nodes for optimal resource use.
+
+echo &quot;SLURM_JOBID=&quot;$SLURM_JOBID          # Prints the SLURM job ID for reference.
+echo &quot;SLURM_JOB_NODELIST&quot;=$SLURM_JOB_NODELIST # Shows the list of nodes assigned to the job.
+echo &quot;SLURM_NNODES&quot;=$SLURM_NNODES        # Prints the number of nodes allocated.
+echo &quot;SLURMTMPDIR=&quot;$SLURMTMPDIR          # Displays the temporary directory path set for this job.
+export I_MPI_JOB_CONTEXT=$SLURM_JOBID    # Sets MPI job context to the SLURM job ID.
+echo SLURM JOB id is $SLURM_JOBID        # Prints the SLURM job ID again for logging.
+
+export I_MPI_FABRICS=ofi:ofi             # Configures MPI to use the OpenFabrics Interface (OFI).
+
+ulimit -s unlimited                      # Removes any limit on stack size.
+ulimit -c unlimited                      # Removes any limit on core file size.
+source /home/apps/SPACK/spack/share/spack/setup-env.sh  # Loads the Spack environment.
+source ~/miniconda3/bin/activate         # Activates the base Conda environment.
+conda activate anuga-cpu                 # Activates the 'anuga-cpu' Conda environment.
+
+export I_MPI_DEBUG=9                     # Sets MPI debug level to verbose (9) for debugging.
+
+spack load intel-oneapi-mpi@2021.11.0 /frfogee # Loads the Intel MPI library via Spack, version 2021.11.0.
+
+export I_MPI_HYDRA_BOOTSTRAP=ssh         # Sets MPI bootstrapping to use SSH.
+
+scontrol show hostname $SLURM_JOB_NODELIST | perl -ne 'chomb; print &quot;$_&quot; x4' | uniq -d &gt; h.txt # Creates a list of unique node names.
+sort -ru h.txt &gt; host.txt                # Sorts and removes duplicates from 'h.txt' to create 'host.txt'.
+sed -i 's/$/ slots=46/' host.txt         # Adds 'slots=46' at the end of each line in 'host.txt' for MPI task allocation.
+
+cp host.txt hostfile1                    # Copies 'host.txt' to 'hostfile1'.
+cat hostfile1 | grep hm &gt; hm_hostfile    # Filters hostfile1 for 'hm' nodes and saves them to 'hm_hostfile'.
+cat hostfile1 | grep cn &gt; cn_hostfile    # Filters hostfile1 for 'cn' nodes and saves them to 'cn_hostfile'.
+
+export I_MPI_HYDRA_BOOTSTRAP=ssh         # Ensures SSH is set as the MPI bootstrap method.
+export UCX_LOG_LEVEL=info                # Sets UCX (Unified Communication X) logging level to 'info' for detailed logs.
+
+(time mpiexec --hostfile hostfile1 -n $SLURM_NTASKS python run_model_3_samir.py 12-09-2021) 2&gt;&amp;1 | tee demo_12sep
+                                        # Runs the 'run_model_3_samir.py' script on the specified date (12-09-2021) 
+                                        # using mpiexec with the hostfile, and redirects output and timing info to 'demo_12sep'.
+
+which python                             # Displays the path to the Python interpreter currently in use.
+
+</code></pre>
+<h4 id="wrf">WRF</h4>
+<h5 id="introduction_2">Introduction</h5>
+<p>WRF is a versatile, high-resolution model widely used for atmospheric research and weather forecasting. It supports both operational forecasts and scientific research applications and has flexible physics options, making it adaptable to various environments and scales.</p>
+<h5 id="input_2">Input</h5>
+<p>Dataset location – PARAM Rudra IUAC, Delhi
+/home/apps/hpc_inputs/WRF</p>
+<h5 id="slurm-script_2">Slurm Script</h5>
+<pre><code>#!/bin/bash
+#SBATCH --job-name=&quot;rfm_job&quot;
+#SBATCH --ntasks=96
+#SBATCH --output=rfm_job.out
+#SBATCH --error=rfm_job.err
+#SBATCH --exclusive
+#SBATCH --partition=hm
+
+spack load intel-oneapi-mpi/bzriwnc
+spack load intel-oneapi-compilers@2023.2.0
+export OMP_NUM_THREADS=1
+#wget https://www2.mmm.ucar.edu/wrf/users/benchmark/v422/v42_bench_conus2.5km.tar.gz
+ulimit -s unlimited
+tar -xvf /home/apps/hpc_inputs/WRF/wrf_run.tar
+ml load apps/wrf-4.5.1
+cd run
+time \
+mpirun -np 96 wrf.exe
+</code></pre>
+<h4 id="amber24">AMBER24</h4>
+<h5 id="introduction_3">Introduction</h5>
+<p>Amber (Assisted Model Building with Energy Refinement) is a molecular simulation software suite used for studying the dynamics of biomolecules like proteins, DNA, RNA, and small molecules. It includes tools for system preparation, molecular dynamics simulations, and trajectory analysis, with well-validated force fields and support for both CPU and GPU computations. Amber is widely used for tasks such as energy minimization, molecular dynamics, free energy calculations, and constant pH simulations. It comprises AmberTools (a free suite for setup and analysis) and Amber MD engines (optimized for high-performance simulations on CPUs and GPUs).</p>
+<!-- 
+##### Input
+Dataset location – PARAM Rudra IUAC, Delhi
+/home/apps/hpc_inputs/WRF -->
+
+<h5 id="slurm-script_3">Slurm Script</h5>
+<pre><code>#!/bin/bash
+#SBATCH --job-name=&quot;amber&quot;
+#SBATCH --output=rfm_job.out
+#SBATCH --error=rfm_job.err
+#SBATCH --exclusive
+#SBATCH --partition=cpu
+export OMP_NUM_THREADS=1
+
+
+module load apps/amber24
+cd /home/apps/SourceApps/amber/amber24/AmberTools/examples/PyRESP/test/water/resp
+./py_resp.run
+
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+    
+  </body>
+</html>

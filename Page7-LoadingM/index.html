@@ -1,0 +1,1206 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Page6-ResourceM/">
+      
+      
+        <link rel="next" href="../Page8-PreparingE/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>Loading packages through SPACK - IITB</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6f8fc17f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#loading-packages-through-spack" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="IITB" class="md-header__button md-logo" aria-label="IITB" data-md-component="logo">
+      
+  <img src="../img/cdac-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IITB
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Loading packages through SPACK
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="IITB" class="md-nav__button md-logo" aria-label="IITB" data-md-component="logo">
+      
+  <img src="../img/cdac-logo.png" alt="logo">
+
+    </a>
+    IITB
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page2-SAAC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Architecture and Configuration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page3-FTF/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    First Things First
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page4-HAC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to access the cluster
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page5-TF-HPC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Transferring files between local machine and HPC cluster
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page6-ResourceM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Resource Management
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Loading packages through SPACK
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Loading packages through SPACK
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#to-use-pre-installed-applications-from-spack" class="md-nav__link">
+    <span class="md-ellipsis">
+      To Use Pre-Installed Applications from Spack
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#to-install-new-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      To install new application
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uninstalling-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uninstalling Packages
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Uninstalling Packages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using Environments
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#packaging-for-application-developers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Packaging (For Application developers)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample-steps-taken-for-creating-linewidth-application-recipe-for-spack" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample steps taken for creating linewidth application recipe for Spack
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample-slurm-script-for-openmp-applicationsprograms-to-use-spack" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample SLURM script for OpenMP applications/programs. to use Spack
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample-slurm-script-for-mpi-applicationsprograms-to-use-spack" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample SLURM script for MPI applications/programs to use Spack
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page8-PreparingE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Preparing Your Own Executable
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page9-Debugging/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Debugging Your Codes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page91-ML-DL/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Machine Learning (ML) / Deep Learning (DL) Application Development
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page911-Enroot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enroot for HPC and Deep Learning Applications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page92-ImportantFacts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Some Important Facts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page93-BestPractices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Best Practices for HPC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page94-InstalledAppl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installed Applications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page95-Acknowledging/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Acknowledging the National Supercomputing Mission in Publications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page96-Help/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Help – PARAM Rudra Support
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page97-UserCreation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Creation Process
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page98-ClosingAccount/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Closing Your Account on PARAM Rudra
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page99-References/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_20" >
+        
+          
+          <label class="md-nav__link" for="__nav_20" id="__nav_20_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Installed Applications
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_20_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_20">
+            <span class="md-nav__icon md-icon"></span>
+            Installed Applications
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_20_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_20_1" id="__nav_20_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Domains
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_20_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_20_1">
+            <span class="md-nav__icon md-icon"></span>
+            Domains
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installed%20Applications/Domains/CFD/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CFD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installed%20Applications/Domains/MolecularDynamics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MolecularDynamics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installed%20Applications/Domains/Page94-InstalledAppl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installed Applications/Libraries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installed%20Applications/Domains/Weather/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Weather
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#to-use-pre-installed-applications-from-spack" class="md-nav__link">
+    <span class="md-ellipsis">
+      To Use Pre-Installed Applications from Spack
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#to-install-new-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      To install new application
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uninstalling-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uninstalling Packages
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Uninstalling Packages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using Environments
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#packaging-for-application-developers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Packaging (For Application developers)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample-steps-taken-for-creating-linewidth-application-recipe-for-spack" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample steps taken for creating linewidth application recipe for Spack
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample-slurm-script-for-openmp-applicationsprograms-to-use-spack" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample SLURM script for OpenMP applications/programs. to use Spack
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample-slurm-script-for-mpi-applicationsprograms-to-use-spack" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample SLURM script for MPI applications/programs to use Spack
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="loading-packages-through-spack">Loading packages through SPACK</h1>
+<p>PARAM Rudra extensively uses spack. The purpose of spack is to provide freedom to users for loading required applications or packages of specific versions with all its dependencies in the user environment. Users can find the list of all installed packages with their specific versions and dependencies. This also specifies which version of the application is available for a given session. All applications and libraries are made available through spack. A User has to load the appropriate package from the available packages.</p>
+<h5 id="introduction">Introduction</h5>
+<p>Spack automates the download-build-install process for software - including dependencies - and provides convenient management of versions and build configurations. It is designed to support multiple versions and configurations of software on a wide variety of platforms and environments. It is designed for large supercomputing centers, where many users and application teams share common installations of software on clusters with exotic architectures, using libraries that do not have a standard ABI. Spack is non-destructive: installing a new version does not break existing installations, so many configurations can coexist on the same system.</p>
+<p>On your login node command prompt execute below commands:</p>
+<pre><code>$ module load spack 
+</code></pre>
+<p>It will load SPACK module and set up environment for SPACK.</p>
+<p><img src="/img/img13.png"></p>
+<p>Kindly see the above screenshot and source below line including initial dot.</p>
+<pre><code>$ . /home/apps/SPACK/spack/share/spack/setup-env.sh
+</code></pre>
+<h5 id="to-use-pre-installed-applications-from-spack">To Use Pre-Installed Applications from Spack</h5>
+<p><strong>spack find</strong></p>
+<p>The spack find command is used to query installed packages on PARAM Kamrupa. Note that some packages appear identical with the default output. The -l flag shows the hash of each package, and the -f flag shows any non-empty compiler flags of those packages.</p>
+<p><img src="/img/img14.png"></p>
+<p><strong>spack load application name</strong></p>
+<p>The easiest way is to use spack load <application name@version></p>
+<p><img src="/img/img15.png"></p>
+<p>To know the Pre-Loaded Application/Compliers</p>
+<h5 id="to-install-new-application">To install new application</h5>
+<p>First check the available compilers in Spack with below command:</p>
+<p><strong>spack compilers</strong></p>
+<p>Spack manages a list of available compilers on the system, detected automatically from the user’s PATH variable. The spack compilers command is an alias for the command spack compiler list.</p>
+<p><img src="/img/img16.png"></p>
+<p>To check the compliers available in the system</p>
+<p>Check if application is available in Spack repo with command-</p>
+<p><strong>spack list</strong></p>
+<p>The spack list command shows available packages.</p>
+<p>The spack list command can also take a query string. Spack automatically adds wildcards to both ends of the string, or you can add your own wildcards.</p>
+<p><img src="/img/img17.png"></p>
+<p>Before installing application check its spec with command</p>
+<p><strong>spack install</strong></p>
+<p>Below is an example of installation of package using spack:</p>
+<pre><code>spack install gromacs@2020.5 +cuda~mpi+blas %intel ^intel-mkl
+</code></pre>
+<p>Above command will install gromacs version 2020.5 with blas and cuda support and without MPI support. For blas there are multiple providers like OpenBLAS, Intel MKL, amdblis, and essl, ^intel-mkl will tell spack to use intel-mkl for blas routines.</p>
+<p>Operators in Spack</p>
+<p>% to select compiler out of available compilers</p>
+<p>^   to use variant of package</p>
+<p>@ to define the version number of packages to be installed.</p>
+<ul>
+<li>to enable variant for package</li>
+</ul>
+<p>~   to disable variant for package</p>
+<h5 id="uninstalling-packages">Uninstalling Packages</h5>
+<p>Earlier we installed many configurations each of zlib. Now we will go through and uninstall some of those packages that we didn’t really need.</p>
+<pre><code>$ spack uninstall zlib %gcc@6.5.0 (type: y)
+</code></pre>
+<h6 id="using-environments">Using Environments</h6>
+<p>Spack has an environment feature in which you can group installed software. You can install software with different versions and dependencies in each environment and can change software to use at once by changing environments. You can create a Spack environment by spack env create command. You can create multiple environments by specifying different environment names here.</p>
+<pre><code>spack env create myenv
+</code></pre>
+<p>To activate the created environment, type spack env activate. Adding -p option will display the current activated environment on your console. Then, install software you need to the activated environment.</p>
+<pre><code>spack env activate -p myenv
+[myenv] [username@es1 ~]$ spack install xxxxx
+</code></pre>
+<p>You can deactivate the environment by spack env deactivate. To switch to another environment, type spack env activate to activate it.</p>
+<pre><code>[myenv] [username@es1 ~]$ spack env deactivate [username@es1 ~]$
+</code></pre>
+<p>Use spack env list to display the list of created Spack environments.</p>
+<pre><code>[username@es1 ~]$ spack env list
+==&gt; 2 environments myenv another_env
+</code></pre>
+<h5 id="packaging-for-application-developers">Packaging (For Application developers)</h5>
+<p>Spack packages are installation scripts, which are essentially recipes for building the software.</p>
+<p>They define properties and behaviour of the build, such as:</p>
+<ul>
+<li>where to find and how to retrieve the software.</li>
+<li>its dependencies.</li>
+<li>options for building the software from source; and</li>
+<li>build commands.</li>
+</ul>
+<p>Once we’ve specified a package’s recipe, users of our recipe can ask Spack to build the software with different features on any of the supported systems. Refer <a href="https://spack.readthedocs.io/en/latest/packaging_guide.html">Packaging Guide — Spack 0.22.0</a> documentation for detailed understanding of the Spack packaging.</p>
+<p>Example Creating Own Package:</p>
+<p>In below spec file we have used Linewidth an IISc developed code. See the bold lines for comments related to preceding lines in the spec file of spack package named IiscLinewidth:</p>
+<pre><code># Copyright 2013-2021 Lawrence Livermore National Security, LLC and other # Spack Project Developers. See the top-level COPYRIGHT file for details. #
+# SPDX-License-Identifier: (Apache-2.0 OR MIT) import os
+import platform import sys
+import llnl.util.tty as tty from spack import *
+class IiscLinewidth(MakefilePackage): &quot;&quot;&quot;
+Linewidth developed by IISC Banglore. &quot;&quot;&quot;
+homepage = &quot;&quot;
+#Url for homepage
+url = &quot;file://{0}/linewidth.tar.gz&quot;.format(os.getcwd())
+#Url for source code
+manual_download = True
+#If source code is not available in public domain
+version('1', sha256='7215f6765e5f5eddfde5f0c67a5bbdef5960607f3e199a609ef5619278ec8a66',
+preferred=True)
+#You can add different versions for you package.
+variant('mpi', default=True, description='Install with MPI support') variant('openmp', default=True, description='Install with OpenMP
+support')
+#Variant gives flexibility to users for changing parameter before compilation.
+depends_on('gmake', type='build') depends_on('mpi', when='+mpi') depends_on('hdf5+fortran+hl+mpi') depends_on('intel-mkl') depends_on('py-h5py')
+depends_on('py-matplotlib', type=('build', 'run'))
+#Depend clause used to specify dependencies for your code.
+@property
+def build_targets(self): targets = [
+#'--directory=SRC', '--file=Makefile',
+'LIBS={0} {1} '.format(self.spec['intel-mkl'].libs.ld_flags,
+self.spec['hdf5'].libs.ld_flags), 'HDFINCFLAGS={0}'.format(self.spec['hdf5'].prefix.include), 'HDF5_HOME={0}'.format(self.spec['hdf5'].prefix), 'FC={0}'.format(self.spec['mpi'].mpifc)
+]
+return targets
+def install(self, spec, prefix): mkdirp(prefix.bin) install('linewidth', prefix.bin)
+####
+#This code uses Makefile for building application. We can define some properties
+# to make changes in Makefile, changing parameter in Makefile at compile time.
+</code></pre>
+<h5 id="sample-steps-taken-for-creating-linewidth-application-recipe-for-spack">Sample steps taken for creating linewidth application recipe for Spack</h5>
+<ul>
+<li>Source code</li>
+</ul>
+<p>Source code of Linewidth was not available through public repo like GitHub, so needed to import OS package.</p>
+<p>os.getcwd() - expects the source tar present in current working directory. cha256 - to check for sha256 checksum we added same in version clause and for place holder we have given version as 1.</p>
+<p>manual download = True refers to spack will not try to download source code for the package.</p>
+<p>name - make sure that name of tar file is same as used inside package recipe</p>
+<ul>
+<li>Variant- User can control behavior of application being built through this clause. Ex- To enable MPI support we have defined it to be true by default.</li>
+<li>depends_on() - This clause defines all dependencies required to build the given application.</li>
+</ul>
+<p>Ex- In linewidth example we have used Intel-MKl and HDF5.</p>
+<ul>
+<li>@property - With this decorator we can define some properties for build system like edit, build, install.</li>
+<li>property build_targets - Defines logic of building source for native platform.</li>
+<li>property install - Defines install procedure to be used after building source code. Ex- In our example we define prefix path</li>
+</ul>
+<h5 id="sample-slurm-script-for-openmp-applicationsprograms-to-use-spack">Sample SLURM script for OpenMP applications/programs. to use Spack</h5>
+<pre><code>#!/bin/bash 
+#SBATCH --nodes=1
+#SBATCH -p cpu ## gpu/standard 
+#SBATCH --exclusive
+#SBATCH -t 1:00:00
+echo &quot;SLURM_JOBID=&quot;$SLURM_JOBID
+echo &quot;SLURM_JOB_NODELIST&quot;=$SLURM_JOB_NODELIST echo &quot;SLURM_NNODES&quot;=$SLURM_NNODES
+echo &quot;SLURM_NTASKS&quot;=$SLURM_NTASKS
+ulimit -s unlimited ulimit -c unlimited
+export OMP_NUM_THREADS=4 ### Maximum number of threads= Number of physical core
+
+#To load necessary application/compiler through spack module load spack
+export SPACK_ROOT=/home/apps/SPACK/spack
+. $SPACK_ROOT/share/spack/setup-env.sh 
+spack load intel-mpi@2019.10.317 /6icwzn3 
+spack load intel-mkl@2020.4.304
+spack load intel-oneapi-compilers@2021.4.0 
+spack load gcc@11.2.0
+(time &lt;executable_path&gt;)
+</code></pre>
+<h5 id="sample-slurm-script-for-mpi-applicationsprograms-to-use-spack">Sample SLURM script for MPI applications/programs to use Spack</h5>
+<pre><code>#!/bin/bash 
+#SBATCH --nodes=2
+#SBATCH -p cpu ## gpu/standard 
+#SBATCH --exclusive
+#SBATCH -t 1:00:00
+echo &quot;SLURM_JOBID=&quot;$SLURM_JOBID
+echo &quot;SLURM_JOB_NODELIST&quot;=$SLURM_JOB_NODELIST echo &quot;SLURM_NNODES&quot;=$SLURM_NNODES
+echo &quot;SLURM_NTASKS&quot;=$SLURM_NTASKS
+ulimit -s unlimited ulimit -c unlimited
+
+#To load necessary application/compiler through spack module load spack
+
+export SPACK_ROOT=/home/apps/SPACK/spack
+. $SPACK_ROOT/share/spack/setup-env.sh
+spack load intel-mpi@2019.10.317 /6icwzn3
+spack load intel-mkl@2020.4.304
+spack load intel-oneapi-compilers@2021.4.0 
+spack load gcc@11.2.0
+(time mpirun -np $SLURM_NTASKS &lt;executable_path&gt;)
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1253 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Page91-ML-DL/">
+      
+      
+        <link rel="next" href="../Page92-ImportantFacts/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>Enroot for HPC and Deep Learning Applications - IITB</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6f8fc17f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#enroot-for-hpc-and-deep-learning-applications" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="IITB" class="md-header__button md-logo" aria-label="IITB" data-md-component="logo">
+      
+  <img src="../img/cdac-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IITB
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Enroot for HPC and Deep Learning Applications
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="IITB" class="md-nav__button md-logo" aria-label="IITB" data-md-component="logo">
+      
+  <img src="../img/cdac-logo.png" alt="logo">
+
+    </a>
+    IITB
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page2-SAAC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Architecture and Configuration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page3-FTF/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    First Things First
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page4-HAC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to access the cluster
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page5-TF-HPC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Transferring files between local machine and HPC cluster
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page6-ResourceM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Resource Management
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page7-LoadingM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Loading packages through SPACK
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page8-PreparingE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Preparing Your Own Executable
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page9-Debugging/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Debugging Your Codes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page91-ML-DL/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Machine Learning (ML) / Deep Learning (DL) Application Development
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Enroot for HPC and Deep Learning Applications
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Enroot for HPC and Deep Learning Applications
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-enroot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction to Enroot
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-use-enroot-for-deep-learning-in-hpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Use Enroot for Deep Learning in HPC?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-commands-in-enroot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Commands in Enroot
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample-slurm-script-with-enroot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample SLURM Script with Enroot
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-run-the-slurm-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Run the SLURM Script
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#programs-using-dl-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Programs using DL modules
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Programs using DL modules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#slurm-script-for-tensorflow-run_tf_cnnsh" class="md-nav__link">
+    <span class="md-ellipsis">
+      SLURM Script for TensorFlow (run_tf_cnn.sh)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slurm-script-for-pytorch-run_pytorch_cnnsh" class="md-nav__link">
+    <span class="md-ellipsis">
+      SLURM Script for PyTorch (run_pytorch_cnn.sh)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page92-ImportantFacts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Some Important Facts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page93-BestPractices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Best Practices for HPC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page94-InstalledAppl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installed Applications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page95-Acknowledging/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Acknowledging the National Supercomputing Mission in Publications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page96-Help/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Help – PARAM Rudra Support
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page97-UserCreation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Creation Process
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page98-ClosingAccount/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Closing Your Account on PARAM Rudra
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page99-References/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_20" >
+        
+          
+          <label class="md-nav__link" for="__nav_20" id="__nav_20_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Installed Applications
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_20_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_20">
+            <span class="md-nav__icon md-icon"></span>
+            Installed Applications
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_20_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_20_1" id="__nav_20_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Domains
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_20_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_20_1">
+            <span class="md-nav__icon md-icon"></span>
+            Domains
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installed%20Applications/Domains/CFD/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CFD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installed%20Applications/Domains/MolecularDynamics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MolecularDynamics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installed%20Applications/Domains/Page94-InstalledAppl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installed Applications/Libraries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installed%20Applications/Domains/Weather/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Weather
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-enroot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction to Enroot
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-use-enroot-for-deep-learning-in-hpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Use Enroot for Deep Learning in HPC?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-commands-in-enroot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Commands in Enroot
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample-slurm-script-with-enroot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample SLURM Script with Enroot
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-run-the-slurm-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Run the SLURM Script
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#programs-using-dl-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Programs using DL modules
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Programs using DL modules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#slurm-script-for-tensorflow-run_tf_cnnsh" class="md-nav__link">
+    <span class="md-ellipsis">
+      SLURM Script for TensorFlow (run_tf_cnn.sh)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slurm-script-for-pytorch-run_pytorch_cnnsh" class="md-nav__link">
+    <span class="md-ellipsis">
+      SLURM Script for PyTorch (run_pytorch_cnn.sh)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="enroot-for-hpc-and-deep-learning-applications">Enroot for HPC and Deep Learning Applications</h1>
+<h5 id="introduction-to-enroot">Introduction to Enroot</h5>
+<p><b>What is Enroot ?</b> Enroot is a lightweight containerization technology designed to provide simple, efficient, and secure container execution in High-Performance Computing (HPC) environments. It allows users to run containerized workloads with minimal overhead and maximum portability.</p>
+<h5 id="why-use-enroot-for-deep-learning-in-hpc">Why Use Enroot for Deep Learning in HPC?</h5>
+<ul>
+<li>
+<p><b> Compatibility with HPC systems: </b> Enroot integrates seamlessly with HPC schedulers like SLURM, avoiding the need for privileged operations.</p>
+</li>
+<li>
+<p><b> Lightweight execution: </b> Enroot has minimal runtime overhead, focusing on simplicity and performance.</p>
+</li>
+<li>
+<p><b> Security: </b> Unlike Docker, which requires root privileges, Enroot operates without elevated permissions, making it safer in shared environments.</p>
+</li>
+<li>
+<p><b> GPU Acceleration: </b> Enroot supports NVIDIA GPUs, a critical feature for deep learning tasks.</p>
+</li>
+<li>
+<p><b> Filesystem Isolation: </b> Enroot uses squashfs images, ensuring efficient storage and access to containerized environments</p>
+</li>
+</ul>
+<h5 id="basic-commands-in-enroot">Basic Commands in Enroot</h5>
+<p>Here are some commonly use Enroot commands:</p>
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Explanation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>enroot import docker://&lt;image&gt;</code></td>
+      <td>Downloads a Docker container image and converts it into an Enroot-compatible squashfs image.</td>
+    </tr>
+    <tr>
+      <td><code>enroot list</code></td>
+      <td>Lists all available Enroot container images in the system.</td>
+    </tr>
+    <tr>
+      <td><code>enroot create &lt;image&gt;</code></td>
+      <td>Creates a container from the specified squashfs image.</td>
+    </tr>
+    <tr>
+      <td><code>enroot start &lt;container&gt;</code></td>
+      <td>Starts the specified container and enters its shell.</td>
+    </tr>
+    <tr>
+      <td><code>enroot start --mount=&lt;src&gt;:&lt;dst&gt; &lt;container&gt;</code></td>
+      <td>Starts the container with a host directory mounted inside.</td>
+    </tr>
+    <tr>
+      <td><code>enroot remove &lt;container&gt;</code></td>
+      <td>Deletes a container from the system.</td>
+    </tr>
+    <tr>
+      <td><code>enroot exec &lt;container&gt; &lt;command&gt;</code></td>
+      <td>Executes a single command within the specified container.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="sample-slurm-script-with-enroot">Sample SLURM Script with Enroot</h5>
+<p>Below is an example SLURM script that demonstrates how to download a container image, open it, and run a simple "Hello, World!" program.</p>
+<pre><code>#!/bin/bash
+#SBATCH --job-name=enroot_example        # Job name
+#SBATCH --output=hello_world_output.log  # Standard output and error log
+#SBATCH --partition=gpu                  # Partition to use (adjust to your HPC setup)
+#SBATCH –-gres gpu:1                      # Number of GPUs required
+#SBATCH -n 1                       # Number of nodes to be allocated
+#SBATCH --time=00:10:00                  # Maximum run time
+
+# Step 1: Import a container image
+echo &quot;Downloading container image...&quot;
+enroot import docker://ubuntu:20.04
+
+# Step 2: Create a container
+echo &quot;Creating the container...&quot;
+enroot create ubuntu+20.04.sqsh
+
+# Step 3: Run a simple program in the container
+echo &quot;Starting the container and running 'Hello, World!'...&quot;
+enroot exec ubuntu+20.04 /bin/bash -c 'echo &quot;Hello, World from Enroot!&quot;'
+</code></pre>
+<h5 id="how-to-run-the-slurm-script">How to Run the SLURM Script</h5>
+<ul>
+<li>Save the script as enroot_hello_world.sh.</li>
+<li>Submit the script using the sbatch command: </li>
+<li>sbatch enroot_hello_world.sh</li>
+<li>Check the output in the hello_world_output.log file once the job is complete</li>
+</ul>
+<h5 id="conclusion">Conclusion</h5>
+<p>Enroot simplifies running containerized workloads in HPC environments while providing essential features like GPU support and enhanced security. With its minimalistic approach, Enroot is ideal for deep learning applications that require high performance and integration with HPC schedulers like SLURM.</p>
+<h2 id="programs-using-dl-modules">Programs using DL modules</h2>
+<p>1 . TensorFlow Script for Training a CNN on CIFAR-10</p>
+<p><b> Python Script (train_cnn_tf.py) </b></p>
+<pre><code>import tensorflow as tf
+from tensorflow.keras import layers, models
+from tensorflow.keras.datasets import cifar10
+from tensorflow.keras.utils import to_categorical
+
+# Load and preprocess the CIFAR-10 dataset
+(x_train, y_train), (x_test, y_test) = cifar10.load_data()
+x_train, x_test = x_train / 255.0, x_test / 255.0
+y_train, y_test = to_categorical(y_train), to_categorical(y_test)
+
+# Build a simple CNN model
+model = models.Sequential([
+    layers.Conv2D(32, (3, 3), activation='relu', input_shape=(32, 32, 3)),
+    layers.MaxPooling2D((2, 2)),
+    layers.Conv2D(64, (3, 3), activation='relu'),
+    layers.MaxPooling2D((2, 2)),
+    layers.Conv2D(64, (3, 3), activation='relu'),
+    layers.Flatten(),
+    layers.Dense(64, activation='relu'),
+    layers.Dense(10, activation='softmax')
+])
+
+# Compile the model
+model.compile(optimizer='adam',
+              loss='categorical_crossentropy',
+              metrics=['accuracy'])
+
+# Train the model
+model.fit(x_train, y_train, epochs=10, batch_size=64, validation_data=(x_test, y_test))
+
+# Save the model
+model.save(&quot;cnn_cifar10_tf.h5&quot;)
+</code></pre>
+<h5 id="slurm-script-for-tensorflow-run_tf_cnnsh">SLURM Script for TensorFlow (run_tf_cnn.sh)</h5>
+<pre><code>#!/bin/bash
+#SBATCH --job-name=tf_cnn_cifar10         # Job name
+#SBATCH --output=tf_cnn_output.log        # Standard output and error log
+#SBATCH --partition=gpu                   # Partition to use
+#SBATCH -n 1                                # Number of nodes
+#SBATCH –-gres gpu:1                    # Required number of GPUs
+#SBATCH --time=01:00:00                   # Maximum run time
+
+# Load the TensorFlow module or activate your environment
+module load mldl_modules/tensorflow_gpu  # Example, adapt to your HPC setup
+
+# Run the training script
+python train_cnn_tf.py
+</code></pre>
+<p>2 . PyTorch Script for Training a CNN on CIFAR-10</p>
+<p><b> Python Script (train_cnn_pytorch.py) </b></p>
+<pre><code>import torch
+import torch.nn as nn
+import torch.optim as optim
+from torchvision import datasets, transforms
+
+# Define a simple CNN model
+class CNN(nn.Module):
+    def __init__(self):
+        super(CNN, self).__init__()
+        self.conv1 = nn.Conv2d(3, 32, kernel_size=3, activation='relu')
+        self.conv2 = nn.Conv2d(32, 64, kernel_size=3, activation='relu')
+        self.fc1 = nn.Linear(64 * 6 * 6, 64)
+        self.fc2 = nn.Linear(64, 10)
+
+    def forward(self, x):
+        x = nn.ReLU()(self.conv1(x))
+        x = nn.MaxPool2d(2)(x)
+        x = nn.ReLU()(self.conv2(x))
+        x = nn.MaxPool2d(2)(x)
+        x = torch.flatten(x, 1)
+        x = nn.ReLU()(self.fc1(x))
+        return self.fc2(x)
+
+# Preprocess the CIFAR-10 dataset
+transform = transforms.Compose([
+    transforms.ToTensor(),
+    transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
+])
+
+train_dataset = datasets.CIFAR10(root='./data', train=True, download=True, transform=transform)
+test_dataset = datasets.CIFAR10(root='./data', train=False, download=True, transform=transform)
+
+train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=64, shuffle=True)
+test_loader = torch.utils.data.DataLoader(test_dataset, batch_size=64, shuffle=False)
+
+# Initialize the model, loss function, and optimizer
+model = CNN().cuda()
+criterion = nn.CrossEntropyLoss()
+optimizer = optim.Adam(model.parameters(), lr=0.001)
+
+# Train the model
+for epoch in range(10):
+    model.train()
+    for images, labels in train_loader:
+        images, labels = images.cuda(), labels.cuda()
+
+        optimizer.zero_grad()
+        output = model(images)
+        loss = criterion(output, labels)
+        loss.backward()
+        optimizer.step()
+
+# Save the model
+torch.save(model.state_dict(), &quot;cnn_cifar10_pytorch.pth&quot;)
+</code></pre>
+<h5 id="slurm-script-for-pytorch-run_pytorch_cnnsh">SLURM Script for PyTorch (run_pytorch_cnn.sh)</h5>
+<pre><code>#!/bin/bash
+#SBATCH --job-name=pytorch_cnn_cifar10    # Job name
+#SBATCH --output=pytorch_cnn_output.log   # Standard output and error log
+#SBATCH --partition=gpu                   # Partition to use
+#SBATCH –-gres gpu:1                      # Number of GPUs
+#SBATCH --time=01:00:00                   # Maximum run time
+#SBATCH – n 1                               # Number of nodes to be allocated
+
+# Load the PyTorch module or activate your environment
+module load mldl_modules/pytorch_gpu  # Example, adapt to your HPC setup
+
+# Run the training script
+python train_cnn_pytorch.py
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+    
+  </body>
+</html>

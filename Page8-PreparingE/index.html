@@ -1,0 +1,970 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Page7-LoadingM/">
+      
+      
+        <link rel="next" href="../Page9-Debugging/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>Preparing Your Own Executable - IITB</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6f8fc17f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#preparing-your-own-executable" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="IITB" class="md-header__button md-logo" aria-label="IITB" data-md-component="logo">
+      
+  <img src="../img/cdac-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IITB
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Preparing Your Own Executable
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="IITB" class="md-nav__button md-logo" aria-label="IITB" data-md-component="logo">
+      
+  <img src="../img/cdac-logo.png" alt="logo">
+
+    </a>
+    IITB
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page2-SAAC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Architecture and Configuration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page3-FTF/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    First Things First
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page4-HAC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to access the cluster
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page5-TF-HPC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Transferring files between local machine and HPC cluster
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page6-ResourceM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Resource Management
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page7-LoadingM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Loading packages through SPACK
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Preparing Your Own Executable
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page9-Debugging/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Debugging Your Codes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page91-ML-DL/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Machine Learning (ML) / Deep Learning (DL) Application Development
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page911-Enroot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enroot for HPC and Deep Learning Applications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page92-ImportantFacts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Some Important Facts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page93-BestPractices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Best Practices for HPC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page94-InstalledAppl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installed Applications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page95-Acknowledging/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Acknowledging the National Supercomputing Mission in Publications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page96-Help/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Help – PARAM Rudra Support
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page97-UserCreation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Creation Process
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page98-ClosingAccount/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Closing Your Account on PARAM Rudra
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page99-References/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_20" >
+        
+          
+          <label class="md-nav__link" for="__nav_20" id="__nav_20_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Installed Applications
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_20_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_20">
+            <span class="md-nav__icon md-icon"></span>
+            Installed Applications
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_20_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_20_1" id="__nav_20_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Domains
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_20_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_20_1">
+            <span class="md-nav__icon md-icon"></span>
+            Domains
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installed%20Applications/Domains/CFD/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CFD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installed%20Applications/Domains/MolecularDynamics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MolecularDynamics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installed%20Applications/Domains/Page94-InstalledAppl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installed Applications/Libraries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installed%20Applications/Domains/Weather/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Weather
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="preparing-your-own-executable">Preparing Your Own Executable</h1>
+<p>The compilations are done on the login node, whereas the execution happens on the compute nodes via the scheduler (SLURM).</p>
+<div class="admonition note"> <p class=admonition-title>Note</p>
+<p> The compilation and execution must be done with the same libraries and matching version to avoid unexpected results. </p>
+</div>
+
+<p>Steps:</p>
+<ul>
+<li>Load required modules on the login node.</li>
+<li>Do the compilation.</li>
+<li>Open the job submission script and specify the same modules to be loaded as used while compilation.</li>
+<li>Submit the script.</li>
+</ul>
+<p>The directory contains a few sample programs and their sample job submission scripts. The compilation and execution instructions are described in the beginning of the respective files.</p>
+<p>The user can copy the directory to his/her home directory and further try compiling and executing these sample codes. The command for copying is as follows:</p>
+<pre><code>cp -r /home/apps/Docs/samples/ ~/.
+</code></pre>
+<ul>
+<li>mm.c              - Serial Version of Matrix-Matrix Multiplication of two NxN matrices</li>
+<li>mm_omp.c      - Basic OpenMP Version of Matrix-Matrix Multiplication of two NxN matrices</li>
+<li>mm_mpi.c      - Basic MPI Version of Matrix-Matrix Multiplication of two NxN matrices</li>
+<li>mm_acc.c  - OpenAcc Version of Matrix-Matrix Multiplication of two NxN matrices</li>
+<li>mm_blas.cu     - CUDA Matrix Multiplication program using the cuBlas library.</li>
+<li>mm_mkl.c       - MKL Matrix Multiplication program.</li>
+<li>laplace_acc.c     - OpenACC version of the basic stencil problem.</li>
+</ul>
+<p>It is recommended to use the intel compilers since they are better optimized for the hardware.</p>
+<p><strong>Compilers</strong></p>
+<table>
+<thead>
+<tr>
+<th>Compilers</th>
+<th>Description</th>
+<th>Versions Available</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gcc/gfortran</td>
+<td>GNU Compiler (C/C++/Fortran)</td>
+<td>8.5.0, 9.3.0, 12.2.0, 13.2.0</td>
+</tr>
+<tr>
+<td>icc/icpc/ifort</td>
+<td>Intel Compilers (C/C++/Fortran)</td>
+<td>2021.5.0, 2021.11.0, 2021.10.0  oneapi@2024.0.0, oneapi@2023.2.0, oneapi@2022.0.0</td>
+</tr>
+<tr>
+<td>mpicc/mpicxx/mpif90</td>
+<td>Intel-MPIwith GNU compilers (C/C++/Fortran)</td>
+<td>2021.11.0</td>
+</tr>
+<tr>
+<td>mpiicc/mpiicpc/mpiifort</td>
+<td>Intel-MPIwithIntel compilers (C/C++/Fortran)</td>
+<td>2021.11.0</td>
+</tr>
+<tr>
+<td>nvcc</td>
+<td>CUDA C Compiler</td>
+<td>9.1.85, 11.8.0, 12.3.0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Optimization Flags</strong></p>
+<p>Optimization flags are meant for uniprocessor optimization, wherein, the compiler tries to optimize the program, on the basis of the level of optimization. The optimization flags may also change the precision of output produced from the executable. The optimization flags can be explored more on the respective compiler pages. A few examples are given below.</p>
+<pre><code>Intel:  -O3 –xHost
+GNU: -O3
+PGI: -fast
+</code></pre>
+<p>Given next is a brief description of compilation and execution of the various types of programs. However, for certain bigger applications, loading of additional dependency libraries might be required.</p>
+<p style="color:#259AA4;text-decoration:underline">C Program:</p>
+
+<pre><code>Setting up of environment: 
+spack load gcc@13.2.0 /3wdooxp
+spack load intel-oneapi-compilers@2024.0.0
+compilation: icc -O3 -xHost &lt;&lt;prog_name.c&gt;&gt;
+Execution: ./a.out
+</code></pre>
+<p style="color:#259AA4;text-decoration:underline">C + OpenMP Program:</p>
+
+<pre><code>Setting up of environment:  
+spack load gcc@13.2.0 /3wdooxp
+spack load intel-oneapi-compilers@2024.0.0 
+Compilation: icc -O3 -xHost -qopenmp &lt;&lt;prog_name.c&gt;&gt;
+Execution: ./a.out
+</code></pre>
+<p style="color:#259AA4;text-decoration:underline">C + MPI Program:</p>
+
+<pre><code>Setting up of environment:  
+spack load gcc@13.2.0 /3wdooxp
+spack load intel-oneapi-compilers@2024.0.0
+Compilation: mpiicc -O3 -xHost &lt;&lt;prog_name.c&gt;&gt;
+Execution: mpirun -n &lt;&lt;num_procs&gt;&gt; ./a.out
+</code></pre>
+<p style="color:#259AA4;text-decoration:underline">C + MKL Program:</p>
+
+<pre><code>Setting up of environment:
+spack load gcc@13.2.0 /3wdooxp
+spack load intel-oneapi-compilers@2024.0.0
+Compilation: icc -O3 -xHost -mkl &lt;&lt;prog_name.c&gt;&gt;
+Execution: ./a.out
+</code></pre>
+<p style="color:#259AA4;text-decoration:underline">CUDA Program:</p>
+
+<pre><code>Setting up of environment: 
+spack load gcc@12.2.0 /h2acmw7
+spack load cuda@12 /qpi4kl6
+
+Example (1)
+Compilation: nvcc -arch=sm_70&lt;&lt;prog_name.cu&gt;&gt;
+Execution: ./a.out 
+Note: The optimization switch -arch=sm_70 is intended for Volta V100 GPUs and is valid for CUDA 9 and later. Similarly, older versions of CUDA have compatibility with lower versions of GCC only. Accordingly, appropriate modules of GCC must be loaded. 
+
+
+Example (2)
+Compilation: nvcc -arch=sm_70 /home/apps/Docs/samples/mm_blas.cu -lcublas
+Execution: ./a.out
+</code></pre>
+<p style="color:#259AA4;text-decoration:underline">CUDA OpenMP Program:</p>
+
+<pre><code>Setting up of environment: 
+spack load gcc@12.2.0 /h2acmw7
+spack load cuda@12 /qpi4kl6
+
+Example (1)
+Compilation: nvcc -arch=sm_70 -Xcompiler=&quot;-fopenmp&quot; -lgomp /home/apps/Docs/samples/mm_blas_omp.cu -lcublas
+Execution: ./a.out 
+
+
+Example (2)
+Compilation: g++ -fopenmp /home/apps/Docs/samples/mm_blas_omp.c -I//home/apps/SPACK/spack/opt/spack/linux-almalinux8-cascadelake/gcc-12.2.0/cuda-12.3.0-qpi4kl6p2yuvmsvkf4daevk7zcr4tu27/include  -L/home/apps/SPACK/spack/opt/spack/linux-almalinux8-cascadelake/gcc-12.2.0/cuda-12.3.0-qpi4kl6p2yuvmsvkf4daevk7zcr4tu27/lib64 -lcublas
+Execution: ./a.out
+</code></pre>
+<p style="color:#259AA4;text-decoration:underline">OpenACC Program:</p>
+
+<pre><code>Setting up of environment: 
+spack load pgi@19.10 cuda@10.1
+
+Compilation for GPU: pgcc -acc -fast -Minfo=all -ta=tesla:cc70,managed/home/apps/Docs/samples/laplace_acc.c
+Execution:./a.out
+
+Compilation for CPU: pgcc -acc -fast -Minfo=all -ta=multicore-tp=skylake /home/apps/Docs/samples/laplace_acc.c
+Execution:./a.out.
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+    
+  </body>
+</html>

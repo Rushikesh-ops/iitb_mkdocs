@@ -1,0 +1,1653 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Page5-TF-HPC/">
+      
+      
+        <link rel="next" href="../Page7-LoadingM/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>Resource Management - IITB</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6f8fc17f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#resource-management" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="IITB" class="md-header__button md-logo" aria-label="IITB" data-md-component="logo">
+      
+  <img src="../img/cdac-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IITB
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Resource Management
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="IITB" class="md-nav__button md-logo" aria-label="IITB" data-md-component="logo">
+      
+  <img src="../img/cdac-logo.png" alt="logo">
+
+    </a>
+    IITB
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page2-SAAC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Architecture and Configuration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page3-FTF/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    First Things First
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page4-HAC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to access the cluster
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page5-TF-HPC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Transferring files between local machine and HPC cluster
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Resource Management
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Resource Management
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#slurm-partitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      SLURM Partitions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qos-job-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      QoS Job policy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scheduling-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scheduling Type
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#job-submission" class="md-nav__link">
+    <span class="md-ellipsis">
+      Job Submission
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample-slurm-scripts-for-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample SLURM Scripts for reference
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#listing-partition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listing Partition
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitoring-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Monitoring jobs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deleting-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deleting jobs:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-node-and-partition-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting Node and Partition details
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accounting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accounting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#investigating-a-job-failure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Investigating a job failure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i-am-familiar-with-pbs-torque-how-do-i-migrate-to-slurm" class="md-nav__link">
+    <span class="md-ellipsis">
+      I am familiar with PBS/ TORQUE. How do I migrate to SLURM?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#addressing-basic-security-concerns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Addressing Basic Security Concerns
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page7-LoadingM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Loading packages through SPACK
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page8-PreparingE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Preparing Your Own Executable
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page9-Debugging/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Debugging Your Codes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page91-ML-DL/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Machine Learning (ML) / Deep Learning (DL) Application Development
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page911-Enroot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enroot for HPC and Deep Learning Applications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page92-ImportantFacts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Some Important Facts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page93-BestPractices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Best Practices for HPC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page94-InstalledAppl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installed Applications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page95-Acknowledging/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Acknowledging the National Supercomputing Mission in Publications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page96-Help/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Help – PARAM Rudra Support
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page97-UserCreation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Creation Process
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page98-ClosingAccount/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Closing Your Account on PARAM Rudra
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Page99-References/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_20" >
+        
+          
+          <label class="md-nav__link" for="__nav_20" id="__nav_20_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Installed Applications
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_20_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_20">
+            <span class="md-nav__icon md-icon"></span>
+            Installed Applications
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_20_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_20_1" id="__nav_20_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Domains
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_20_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_20_1">
+            <span class="md-nav__icon md-icon"></span>
+            Domains
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installed%20Applications/Domains/CFD/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CFD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installed%20Applications/Domains/MolecularDynamics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MolecularDynamics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installed%20Applications/Domains/Page94-InstalledAppl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installed Applications/Libraries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installed%20Applications/Domains/Weather/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Weather
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#slurm-partitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      SLURM Partitions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qos-job-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      QoS Job policy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scheduling-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scheduling Type
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#job-submission" class="md-nav__link">
+    <span class="md-ellipsis">
+      Job Submission
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample-slurm-scripts-for-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample SLURM Scripts for reference
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#listing-partition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listing Partition
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitoring-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Monitoring jobs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deleting-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deleting jobs:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-node-and-partition-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting Node and Partition details
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accounting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accounting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#investigating-a-job-failure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Investigating a job failure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i-am-familiar-with-pbs-torque-how-do-i-migrate-to-slurm" class="md-nav__link">
+    <span class="md-ellipsis">
+      I am familiar with PBS/ TORQUE. How do I migrate to SLURM?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#addressing-basic-security-concerns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Addressing Basic Security Concerns
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="resource-management">Resource Management</h1>
+<p>This section explains how you interact with the resource manager. It covers information about the resource manager, the definition of nodes within partitions, job policies, scheduler information, the process of submitting jobs to the cluster, monitoring active jobs and getting useful information about resource usage.</p>
+<p>A cluster is a group of computers that work together to solve complex computational tasks and presents itself to the user as a single system. For the resources of a cluster (e.g. CPUs, GPUs, memory) to be used efficiently, a resource manager (also called workload manager or batch-queuing system) is important. While there are many different resource managers available, the resource manager at PARAM Rudra is SLURM. After submitting a job to the cluster, SLURM will try to fulfill the job’s resource request by allocating resources to the job. If the requested resources are already available, the job can start immediately. Otherwise, the start of the job is delayed (pending) until enough resources are available. SLURM allows you to monitor active (pending, running) jobs and to retrieve statistics about finished jobs. </p>
+<p>SLURM, which is open-source workload manager, efficiently allocates computing resources such as CPUs, GPUs, and memory to users' jobs, ensuring optimal resource utilization and job scheduling. SLURM provides features for job submission, monitoring, and management, allowing users to specify job requirements and dependencies. Slurm is a widely used batch scheduler in the top500 HPC list.</p>
+<h5 id="slurm-partitions">SLURM Partitions</h5>
+<p>Partition is a logical grouping of nodes that share similar characteristics or resources. Partitions are helpful to manage and allocate resources efficiently based on the specific requirements of jobs or users. PARAM Rudra consists of three types of computational nodes: i.e. CPU only nodes, High memory (with 768 GB memory) nodes and GPU-enabled GPGPU nodes.
+The following partitions/queues have been defined to meet different user requirements:</p>
+<ul>
+<li>standard: By default, All user job will be submitted to the standard partition which contains 569 nodes. These nodes consist of CPU and High Memory (HM) nodes.</li>
+<li>CPU: This partition is specifically designed for nodes that only have CPU resources.</li>
+<li>GPU: The GPU partition includes nodes equipped with NVIDIA A100 GPUs. Jobs submitted to this partition will run on nodes that can leverage the high-performance computing capabilities of A100 GPU cards for parallel processing tasks.  The GPU partition exclusively contains GPU nodes. If a user’s wishes to submit a job only on GPU nodes, they need to specify the number of GPU cards with the partition name.</li>
+<li>hm: The High Memory partition is intended for nodes with a substantial amount of RAM. Specifically, it accommodates CPU nodes that are equipped with 768 GB of RAM, allowing jobs requiring large memory resources to be executed efficiently.</li>
+</ul>
+<h5 id="qos-job-policy">QoS Job policy</h5>
+<p>Users have the flexibility to run up to 10 simultaneous jobs. They can run an 8-node job for 4 days, a 16-node job for 2 days, or a 32-node job for 1 day. The default policy of the cluster allows for a maximum wall time of 4 days per job. However, this policy can be tailored to individual user needs or adjusted for all users in the future, depending on cluster usage. Users will be informed about any changes made to the SLURM policy.</p>
+<p style="color:#259AA4;text-decoration:underline">Walltime</p>
+
+<p>The walltime parameter defines how long your job will run, with the maximum runtime determined by the QoS Policy. The default walltime for every job is 2 hours, so users are requested to explicitly specify the walltime in their scripts. If more than 4 days are required, users can raise a query on the support portal of PARAM Rudra, and it will be addressed on a case-by-case basis. If a job exceeds the specified walltime in the script, it will be terminated. Specifying the appropriate walltime improves scheduling efficiency, resulting in enhanced throughput for all jobs, including yours.</p>
+<h5 id="scheduling-type">Scheduling Type</h5>
+<p>PARAM Rudra has been configured with Slurm’s backfill scheduling policy. It is good for ensuring higher system utilization; it will start lower priority jobs if doing so does not delay the expected start time of any higher priority jobs. Since the expected start time of pending jobs depends upon the expected completion time of running jobs, reasonably accurate time limits are important for backfill scheduling to work well.</p>
+<p style="color:#259AA4;text-decoration:underline">Job Priority</p>
+
+<p>The job's priority at any given time will be a weighted sum of all the factors that have been enabled in the slurm.conf file. Job priority can be expressed as:</p>
+<pre><code>Job_priority =
+    site_factor +
+    (PriorityWeightAge) * (age_factor) +
+    (PriorityWeightAssoc) * (assoc_factor) +
+    (PriorityWeightFairshare) * (fair-share_factor) +
+    (PriorityWeightJobSize) * (job_size_factor) +
+    (PriorityWeightPartition) * (priority_job_factor) +
+    (PriorityWeightQOS) * (QOS_factor) +
+    SUM(TRES_weight_cpu * TRES_factor_cpu,
+        TRES_weight_&lt;type&gt; * TRES_factor_&lt;type&gt;,
+        ...)
+    - nice_factor
+</code></pre>
+<p>All of the factors in this formula are floating point numbers that range from 0.0 to 1.0. The weights are unsigned, 32-bit integers. The larger the number, the higher the job will be positioned in the queue, and the sooner the job will be scheduled. A job's priority, and hence its order in the queue, can vary over time. For example, the longer a job sits in the queue, the higher its priority will grow when the age weight is non-zero.</p>
+<p><strong>Age Factor:</strong> The age factor represents the length of time a job has been sitting in the queue and eligible to run. </p>
+<p><strong>Association Factor:</strong> Each association can be assigned an integer priority. The larger the number, the greater the job priority will be for jobs that request this association. This priority value is normalized to the highest priority of all the association to become the association factor.</p>
+<p><strong>Job Size Factor:</strong> The job size factor correlates to the number of nodes or CPUs the job has requested. </p>
+<p><strong>Nice Factor:</strong> Users can adjust the priority of their own jobs by setting the nice value on their jobs. Like the system nice, positive values negatively impact a job's priority and negative values increase a job's priority. Only privileged users can specify a negative value. </p>
+<p><strong>Partition Factor:</strong> Each node partition can be assigned an integer priority. The larger the number, the greater the job priority will be for jobs that request to run in this partition. </p>
+<p><strong>Quality of Service (QOS) Factor:</strong> Each QOS can be assigned an integer priority. The larger the number, the greater the job priority will be for jobs that request this QOS. </p>
+<p><strong>Fair-share Factor:</strong> The fair-share component to a job's priority influences the order in which a user's queued jobs are scheduled to run based on the portion of the computing resources they have been allocated and the resources their jobs have already consumed. </p>
+<h5 id="job-submission">Job Submission</h5>
+<p>We can submit jobs either through a SLURM script or by using the interactive method. Creating a SLURM script is the optimal way to submit a job to the cluster.</p>
+<p style="color:#259AA4;text-decoration:underline">Submitting Batch Scripts Jobs</p>
+
+<p>Here is the example of sample slurm script:</p>
+<pre><code>#!/bin/bash#!/bin/bash
+#SBATCH -N 1            // number of nodes
+#SBATCH --ntasks-per-node=1     // number of cores per node
+#SBATCH --error=job.%J.err  // name of output file
+#SBATCH --output=job.%J.out     // name of error file
+#SBATCH --time=01:00:00     // time required to execute the program
+#SBATCH --partition=standard // specifies queue name (standard is the default partition if you do not specify any partition job will be submitted using default partition). For other partitions you can specify hm or gpu
+
+
+// To load the package //
+spack load intel-oneapi-compilers
+
+cd  &lt;Path of the executable&gt;
+a.out  (Name of the executable)
+</code></pre>
+<p>We can consider four cases of submitting a job here:</p>
+<ul>
+<li>Submitting a simple standalone job</li>
+</ul>
+<p>This is a simple submit script which is to be submitted</p>
+<pre><code>$ sbatch slurm-job.sh
+</code></pre>
+<p>Submitted batch job 106</p>
+<ul>
+<li><strong><span style="text-decoration:underline;">Submit a job</span> that's dependent on a prerequisite job being completed</strong></li>
+</ul>
+<p>Consider a requirement of pre-processing a job before proceeding to actual processing. Pre-processing is generally done on a single core. In this scenario, the actual processing script is dependent on the outcome of the pre-processing script.
+Here’s a simple job script.</p>
+<p>Note that the Slurm -J option is used to give the job a name.</p>
+<pre><code>#!/bin/bash
+#SBATCH -p standard
+#SBATCH -J simple
+sleep 60
+
+
+
+Submit the job:  
+$ sbatch simple.sh
+Submitted batch job 149
+</code></pre>
+<p>Now we'll submit another job that's dependent on the previous job. There are many ways to specify the dependency conditions, but the "singleton" method is the simplest. The Slurm -d singleton argument tells Slurm not to dispatch this job until all previous jobs with the same name have completed.</p>
+<pre><code>$ sbatch -d singleton simple.sh //may be used for first pre-processing on a core and then submitting
+Submitted batch job 150
+
+$ squeue
+  JOBID PARTITION NAME USER ST TIME NODES NODELIST(REASON)
+    150 standard   simple user1  PD  0:00  1 (Dependency)
+    149 standard   simple  user1   R   0:17  1 rpcn001
+</code></pre>
+<p>Once the prerequisite job finishes the dependent job is dispatched.</p>
+<pre><code>$ squeue
+  JOBID PARTITION  NAME    USER   ST   TIME  NODES NODELIST(REASON)
+    150 standard   simple  user1   R   0:31      1 rpcn001
+</code></pre>
+<ul>
+<li>Submit a job with a reservation allocated
+Slurm has the ability to reserve resources for jobs being executed by select users and/or select bank accounts. A resource reservation identifies the resources in that reservation and a time period during which the reservation is available. The resources which can be reserved include cores, nodes.</li>
+</ul>
+<p>Use the  command given below to check the reservation name allocated to your user account</p>
+<pre><code>$ scontrol show reservation
+</code></pre>
+<p>If your ‘user account’ is associated with any reservation the above command will show you the same. For e.g. The given reservation name is user_11. Use the command given below to make use of this reservation</p>
+<pre><code>$ sbatch --reservation=user_11 simple.sh
+</code></pre>
+<ul>
+<li>Submitting multiple jobs with minor or no changes (array jobs)</li>
+</ul>
+<p>A <strong>SLURM job array</strong> is a collection of jobs that differs from each other by only a single index parameter. Job arrays can be used to submit and manage a large number of jobs with similar settings.</p>
+<p><img src="/img/img8.png"></p>
+<p style="text-align: center;">Figure 9 – Snapshot depicting the usage of “Job Array”</p>
+
+<p>N1 is specifying the number of nodes you want to use for your job. example: N1 -one node, N4 - four nodes. Instead of tmp here you can use the below example script.</p>
+<pre><code>#!/bin/bash
+#SBATCH -N 1
+#SBATCH --ntasks-per-node=48
+#SBATCH --error=job.%A_%a.err
+#SBATCH --output=job.%A_%a.out
+#SBATCH --time=01:00:00
+#SBATCH --partition=standard
+
+spack load intel-oneapi-compilers
+cd /home/guest/Rajneesh/Rajneesh    #change to your required directory
+export OMP_NUM_THREADS=${SLURM_ARRAY_TASK_ID}
+/home/guest/Rajneesh/Rajneesh/md_omp
+</code></pre>
+<!-- #2775cd -->
+<p style="color:#259AA4;text-decoration:underline">Running Interactive Jobs</p>
+
+<p>Another way to run your job is interactively. You can run an interactive job as follows:</p>
+<p>The following command asks for a single core in one hour with default amount of memory. </p>
+<pre><code>$ srun --nodes=1 --ntasks-per-node=1 --time=01:00:00 --pty /bin/bash -i
+</code></pre>
+<p>The command prompt of the allocated compute node will appear as soon as the job starts. </p>
+<p>Exit the bash shell to end the job. </p>
+<p>If the job is waiting for the resources, then this is how it will look :</p>
+<pre><code>$ job 1040 queued and waiting for resources
+</code></pre>
+<p>If after a while, it will allocate resources, then it will look like this:</p>
+<pre><code>$ job 1040 has been allocated resources
+</code></pre>
+<p>If you exceed the time or memory limit the job will also abort.</p>
+<p>Please note that PARAM Rudra is NOT meant for executing interactive jobs. However, it can be utilized to quickly verify the successful execution of a job before submitting a larger batch job with a high iteration count. It can also be used for running small jobs. However, it's important to consider that other users may also be utilizing this node, so it's advisable not to inconvenience them by running large jobs. </p>
+<p>There are various use cases for requesting interactive resources, such as debugging (launching a job, adjusting setup parameters like compile options, relaunching the job, and making further adjustments) and interactive interfaces (inspecting a node, etc.).</p>
+<p style="color:#259AA4;text-decoration:underline">Parameters used in SLURM job script</p>
+
+<p>The job flags are used with the SBATCH command.  The syntax for the SLURM directive in a script is "#SBATCH <flag>".  Some of the flags are used with the srun and salloc commands.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Flag Syntax</th>
+<th>Description</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>partition</td>
+<td>--partition=</td>
+<td>Partition is a queue for the jobs.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>time</td>
+<td>--time=01:00:00</td>
+<td>Time limit for the job.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>nodes</td>
+<td>--nodes=2</td>
+<td>Number of compute nodes for the job.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>cpus/cores</td>
+<td>--ntasks-per-node=8</td>
+<td>Corresponds to the number of cores on the compute node.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>resource feature</td>
+<td>--gres=gpu:2</td>
+<td>Request use of GPUs on the gpu compute nodes</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>account</td>
+<td>--account=</td>
+<td>User may belong to multiple accounts. If only one account is allocated, it will be set as the default.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>job name</td>
+<td>--job-name="lammps"</td>
+<td>Name of the job.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>error file</td>
+<td>--error=</td>
+<td>Instruct Slurm to connect the batch script's standard error directly to the file name specified in the "filename pattern". By default both standard output and standard error are directed to the same file.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>output file</td>
+<td>--output=</td>
+<td>Instruct Slurm to connect the batch script's standard output directly to the file name specified in the "filename pattern". By default both standard output and standard error are directed to the same file.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>node list</td>
+<td>-w, --nodelist</td>
+<td>Request a specific list of hosts.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>mail-type</td>
+<td>--mail-type=</td>
+<td>Notify users by email when certain event types occur. Valid type values are NONE, BEGIN, END, FAIL, REQUEUE, ALL, TIME_LIMIT, TIME_LIMIT_90 (reached 90 percent of time limit), TIME_LIMIT_80 (reached 80 percent of time limit), and TIME_LIMIT_50 (reached 50 percent of time limit), and ARRAY_TASKS (send emails for each array task). Multiple type values may be specified in a comma separated list</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>mail-user</td>
+<td>--mail-user=</td>
+<td>User to receive email notification of state changes as defined by --mail-type.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Reservation</td>
+<td>--reservation=</td>
+<td>Allocate resources for the job from the named reservation.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Validate script</td>
+<td>--test-only</td>
+<td>Validate the batch script and return an estimate of when a job would be scheduled to run given the current job queue and all the other arguments specifying the job requirements. No job is actually submitted.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>exclusive access to nodes</td>
+<td>--exclusive</td>
+<td>Exclusive access to compute nodes.The job allocation cannot share nodes with other running jobs</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="sample-slurm-scripts-for-reference"><p style="color:#259AA4;text-decoration:underline">Sample SLURM Scripts for reference</p></h5>
+<p><strong>Script for a Sequential Job</strong></p>
+<pre><code>#!/bin/bash
+#SBATCH -N 1   // number of nodes
+#SBATCH --ntasks-per-node=1 // number of cores per node
+#SBATCH --error=job.%J.err // name of output file
+#SBATCH --output=job.%J.out // name of error file
+#SBATCH --time=01:00:00    // time required to execute the program
+#SBATCH --partition=standard // specifies queue name (standard is the default partition if you do not specify any partition job will be submitted using default partition). For other partitions you can specify hm or gpu
+
+
+// To load the package //
+spack load intel-oneapi-compilers
+
+cd  &lt;Path of the executable&gt;
+a.out  (Name of the executable)
+</code></pre>
+<p><strong>Script for a Parallel OpenMP Job</strong></p>
+<pre><code>#!/bin/bash
+#SBATCH -N 1                  // Number of nodes
+#SBATCH --ntasks-per-node=48  // Number of core per node
+#SBATCH --error=job.%J.err    // Name of output file
+#SBATCH --output=job.%J.out   // Name of error file
+#SBATCH --time=01:00:00       // Time take to execute the program 
+#SBATCH --partition=cpu       // specifies partition name
+
+
+spack load intel-oneapi-compilers  // To load the package
+
+cd  &lt;path of the executable&gt;
+or 
+cd  $SLURM_SUBMIT_DIR //To run job in the directory from where it is submitted
+
+export OMP_NUM_THREADS=48 //Depending upon your requirement you can change the number of threads. If total number of threads per node is more than 48, multiple threads will share core(s) and performance may degrade)
+
+/home/cdac/a.out       //Name of the executable)
+</code></pre>
+<p><strong>Script for Parallel Job – MPI (Message Passing Interface)</strong></p>
+<pre><code>#!/bin/sh
+
+#SBATCH -N 16                           // Number of nodes
+#SBATCH --ntasks-per-node=48            // Number of cores per node
+#SBATCH --time=06:50:20                 // Time required to execute the program
+#SBATCH --job-name=lammps               // Name of application
+#SBATCH --error=job.%J.err_16_node_48     // Name of the output file
+#SBATCH --output=job.%J.out_16_node_48    // Name of the error file
+#SBATCH --partition=standard              // Partition or queue name
+spack load intel-oneapi-compilers       // To load the package
+
+
+// Below are Intel MPI specific settings //
+
+export I_MPI_FALLBACK=disable
+export I_MPI_FABRICS=shm:dapl  
+export I_MPI_DEBUG=9                // Level of MPI verbosity
+
+cd $SLURM_SUBMIT_DIR    //change to required path where command needs to be executed
+or 
+cd /home/manjuv/LAMMPS_2018COMPILER/lammps-22Aug18/bench
+
+// Example Command to run the lammps in Parallel // 
+
+time mpiexec.hydra -n $SLURM_NTASKS -genv OMP_NUM_THREADS 1 /home/manjuv/LAMMPS_2018COMPILER/lammps-22Aug18/src/lmp_intel_cpu_intelmpi -in in.lj
+</code></pre>
+<p><strong>Script for Hybrid Parallel Job – (MPI + OpenMP)</strong></p>
+<pre><code>#!/bin/sh
+
+#SBATCH -N 16               // Number of nodes
+#SBATCH --ntasks-per-node=48    // Number of cores for node
+#SBATCH --time=06:50:20         // Time required to execute the program
+#SBATCH --job-name=lammps       // Name of application
+#SBATCH --error=job.%J.err_16_node_48  // Name of the output file
+#SBATCH --output=job.%J.out_16_node_48 // Name of the error file
+#SBATCH --partition=standard           // Partition or queue name 
+
+spack load intel-oneapi-compilers       // To load the package
+//change to script submission directory
+cd $SLURM_SUBMIT_DIR
+
+// Below are Intel MPI specific settings //
+export I_MPI_FALLBACK=disable
+
+export I_MPI_FABRICS=shm:dapl  
+export I_MPI_DEBUG=9                // Level of MPI verbosity 
+export OMP_NUM_THREADS=24 //Possibly then total no. of MPI ranks will be = (total no. of cores, in this case 16 nodes x 48 cores/node) divided by (no. of threads per MPI rank i.e. 24)
+// Example Command to run the lammps in Parallel // 
+time mpiexec.hydra  -n 32 lammps.exe -in in.lj
+</code></pre>
+<p><br></p>
+<h5 id="listing-partition">Listing Partition</h5>
+<p>sinfo displays information about nodes and partition allowing users to view available nodes in the partition within the cluster.</p>
+<p><img src="/img/img9.png"></p>
+<p style="text-align:center">Figure 8- Output of sinfo command</p>
+
+<h5 id="monitoring-jobs">Monitoring jobs</h5>
+<p>Monitoring jobs on SLURM can be done using the command squeue.  The command squeue provides high-level information about jobs in the Slurm scheduling queue (state information, allocated resources, runtime, etc .</p>
+<pre><code>$ squeue
+  JOBID PARTITION  NAME      USER    ST  TIME  NODES  NODELIST(REASON)
+   106  standard    slurm-jo      user1     R    0:04      1     rpcn001
+</code></pre>
+<p>The command scontrol provides even more detailed information about jobs and job steps.
+It will report more detailed information about nodes, partitions, jobs, job steps, and configuration. </p>
+<pre><code>$ scontrol show job &lt;jobid&gt;
+</code></pre>
+<p><img src="/img/img10.png"></p>
+<p style="text-align:center">Figure 12 – scontrol show job displays specific job information</p>
+
+<pre><code>scontrol update job &lt;jobid&gt;- set &lt;new attribute value&gt;
+</code></pre>
+<p>The above command change attributes of submitted job. Like time limit, nodelist, number of nodes, etc. For example:</p>
+<pre><code>scontrol update jobid=106 set TimeLimit=4-00:00:00
+</code></pre>
+<h5 id="deleting-jobs">Deleting jobs:</h5>
+<p>Use the scancel command to delete active jobs. Users can cancel their own jobs only.</p>
+<pre><code>$ scancel &lt;jobid&gt;
+$ scancel 135
+$ squeue --me
+  JOBID PARTITION NAME USER ST TIME NODES NODELIST(REASON)
+</code></pre>
+<p><strong>Holding a job:</strong></p>
+<p>Use the scontrol command to hold the job.</p>
+<pre><code>$scontrol hold &lt;jobid&gt;
+$ squeue
+  JOBID PARTITION  NAME    USER   ST      TIME  NODES NODELIST(REASON)
+    139 standard   simple  user1  PD      0:00      1 (Dependency)
+138 standard   simple  user1   R      0:16      1  rpcn001
+
+$ scontrol hold 139
+$ squeue
+  JOBID PARTITION  NAME    USER   ST     TIME  NODES NODELIST(REASON)
+    139 standard   simple  user1  PD     0:00      1 (JobHeldUser)
+    138 standard   simple  user1   R     0:32      1 rpcn001
+</code></pre>
+<p><strong>Releasing a job:</strong></p>
+<pre><code>$ scontrol release 139
+$ squeue
+  JOBID PARTITION  NAME     USER  ST       TIME  NODES NODELIST(REASON)
+    139 standard   simple  user1  PD       0:00      1 (Dependency)
+    138 standard   simple  user1   R       0:46      1 rpcn001
+</code></pre>
+<h5 id="getting-node-and-partition-details">Getting Node and Partition details</h5>
+<pre><code>scontrol show node &lt;node name&gt; - shows detailed information about compute nodes.
+</code></pre>
+<p><img src="/img/img11.png"></p>
+<p style="text-align:center">Figure 10 – scontrol show node displays compute node information</p>
+
+<pre><code>scontrol show partition &lt;partition name&gt;- shows detailed information about a specific partition
+</code></pre>
+<p><img src="/img/img12.png"></p>
+<p style="text-align:center">Figure 11 – scontrol show partition displays specific partition details</p>
+
+<h5 id="accounting">Accounting</h5>
+<p>Accounting system tracks and manages HPC resource usage. As jobs are completed or resources are utilized, accounts are charged and resource usage is recorded. Accounting policy is like a Banking System, where each department can be allocated with some predefined budget on a quarterly basis for CPU usage. As and when the resources are utilized, the amount will be deducted. The allocation will be reset half yearly. Depending upon the policy, users will be informed when their account is created about how much CPU hours have been allocated to them.</p>
+<p><strong>sacct</strong></p>
+<p>This command can report resource usage for running or terminated jobs including individual tasks, which can be useful to detect load imbalance between the tasks. </p>
+<pre><code>$ sacct -j &lt;jobid&gt;
+</code></pre>
+<h5 id="investigating-a-job-failure">Investigating a job failure</h5>
+<p>Job executions aren't always successful. There are various reasons for a job to stop or crash. The most common causes are:</p>
+<ul>
+<li>Exceeding resource limits</li>
+<li>Software-specific errors</li>
+</ul>
+<p>This section discusses methods to gather information and find ways to avoid common issues.</p>
+<p>It is important to collect error and output messages by either writing this information to the default location or specifying specific locations using the --error/--output option.  Redirecting the error/output stream to /dev/null should be avoided unless you fully understand its implications, as error and output messages serve as the initial point for investigating job failures.</p>
+<p><strong>Exceeding Resource Limits</strong></p>
+<p>Each partition defines default and maximum time limits of the job runtime and memory usage. Within the job script, the current limits can be defined within the ranges. For better scheduling, the job requirements should be estimated and the limits should be adapted to the needs. Lower limits enable SLURM to find suitable scheduling opportunities more effectively. Additionally, specifying minimal resource overhead minimizes resource wastage.</p>
+<p>If a job exceeds the runtime or memory limit, it will get killed by SLURM.</p>
+<p><strong>Software Errors</strong></p>
+<p>The exit code of a job is captured by Slurm and saved as part of the job record. For sbatch jobs the exit code of the batch script is captured. For srun, the exit code will be the return value of the executed command. Any non-zero exit code is considered a job failure, and results in job state of FAILED. When a signal was responsible for a job/step termination, the signal number will also be captured, and displayed after the exit code (separated by a colon).</p>
+<h5 id="i-am-familiar-with-pbs-torque-how-do-i-migrate-to-slurm">I am familiar with PBS/ TORQUE. How do I migrate to SLURM?</h5>
+<table>
+<thead>
+<tr>
+<th>Environment Variables</th>
+<th>PBS/Torque</th>
+<th>SLURM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Job Id</td>
+<td>$PBS_JOBID</td>
+<td>$SLURM_JOBID</td>
+</tr>
+<tr>
+<td>Submit Directory</td>
+<td>$PBS_JOBID</td>
+<td>$SLURM_SUBMIT_DIR</td>
+</tr>
+<tr>
+<td>Node List</td>
+<td>$PBS_NODEFILE</td>
+<td>$SLURM_JOB_NODELIST</td>
+</tr>
+<tr>
+<td>Job Specification</td>
+<td>PBS/Torque</td>
+<td>SLURM</td>
+</tr>
+<tr>
+<td>Script directive</td>
+<td>#PBS</td>
+<td>#BATCH</td>
+</tr>
+<tr>
+<td>Job Name</td>
+<td>-N [name]</td>
+<td>--job-name=[name] OR -J [name]</td>
+</tr>
+<tr>
+<td>Node Count</td>
+<td>-1 nodes=[count]</td>
+<td>--nodes=[min[-max]] OR -N [min[-max]]</td>
+</tr>
+<tr>
+<td>CPU count</td>
+<td>-1 ppn=[count]</td>
+<td>---ntasks-per-node=[count]</td>
+</tr>
+<tr>
+<td>CPUs Per Task</td>
+<td></td>
+<td>--cpus-per-task=[count]</td>
+</tr>
+<tr>
+<td>Memory Size</td>
+<td>-1 mem-[MB]</td>
+<td>--mem=[MB] OR –mem_per_cpu=[MB]</td>
+</tr>
+<tr>
+<td>Wall Clock Limit</td>
+<td>-1 walltime=[hh:mm:ss]</td>
+<td>--time=[min] OR –mem_per_cpu=[MB]</td>
+</tr>
+<tr>
+<td>Node Properties</td>
+<td>-1 nodes=4.ppn=8:[property]</td>
+<td>--constraint=[list]</td>
+</tr>
+<tr>
+<td>Standard Output File</td>
+<td>-o [file_name]</td>
+<td>--output=[file_name] OR -o [file_name]</td>
+</tr>
+<tr>
+<td>Standard Error File</td>
+<td>-e [file_name]</td>
+<td>--error=[file_name] OR -e {file_name]</td>
+</tr>
+<tr>
+<td>Combine stdout/stderr</td>
+<td>-j oe (both to stdout)</td>
+<td>(This is default if you do not specify –error)</td>
+</tr>
+<tr>
+<td>Job Arrays</td>
+<td>-t [array_spec]</td>
+<td>--array=[array_spec] OR -a [array_spec]</td>
+</tr>
+<tr>
+<td>Delay Job Start</td>
+<td>-a [time]</td>
+<td>--begin=[time]</td>
+</tr>
+</tbody>
+</table>
+<h5 id="addressing-basic-security-concerns">Addressing Basic Security Concerns</h5>
+<ul>
+<li>Your account on PARAM Rudra is ‘private to you’. You are responsible for any actions emanating from your account. It is suggested that you should never share the password with anyone.</li>
+<li>Do not grant permission of your home directory to any other user, as it may expose your personal files to unauthorized access.
+Per user</li>
+<li>Every user will have quota of 50 GB of soft limit and X GB of hard limit with grace period of X days in HOME file system (/home) and X GB of soft limit and X GB of hard limit with grace period of X days in SCRATCH file system</li>
+<li>Users are recommended to copy their execution environment and input files to scratch file system (/scratch/<username>) during job running and copy output data back to HOME area</li>
+<li>File retention policy has been implemented on Lustre storage for the "/scratch" file system. As per the policy, any files that have not been accessed for the last 3 months will be deleted permanently</li>
+</ul>
+<p>It is important to note:</p>
+<ul>
+<li>Compilations are performed on the login node. Only the execution is scheduled via SLURM on the compute nodes.</li>
+<li>It is important to collect error/output messages, either by writing such information to the default location or by specifying specific locations using the --error or --output option. Error and output messages serves as the starting point for investigating a job failures. If not specified, the Job Id is also appended to the output and error filenames.</li>
+<li>Submitting a series of jobs (a collection of similar jobs) as array jobs instead of one by one is crucial for improving backfilling performance and thus job throughput, instead of submitting the same job repeatedly.</li>
+<li>User has to specify #SBATCH --gres=gpu:1/2 in their job script if user wants to use 1 or 2 GPU cards on GPU nodes</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+    
+  </body>
+</html>
